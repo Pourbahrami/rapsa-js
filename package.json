@@ -8,20 +8,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pourbahrmai/rapsa-js.git"
+    "url": "git+https://github.com/pourbahrami/rapsa-js.git"
   },
   "keywords": [
     "rapsa",
-    "digital",
-    "rial",
+    "digital rial",
     "payment"
   ],
   "author": "Hossein Pourbahrami",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pourbahrmai/rapsa-js/issues"
+    "url": "https://github.com/pourbahrami/rapsa-js/issues"
   },
-  "homepage": "https://github.com/pourbahrmai/rapsa-js#readme",
+  "homepage": "https://github.com/pourbahrami/rapsa-js#readme",
   "devDependencies": {
     "jest": "^29.7.0"
   },
