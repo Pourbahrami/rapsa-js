@@ -1,0 +1,31 @@
+{
+  "name": "rapsa",
+  "version": "1.1.0",
+  "description": "Rapsa SDK for JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pourbahrmai/rapsa-js.git"
+  },
+  "keywords": [
+    "rapsa",
+    "digital",
+    "rial",
+    "payment"
+  ],
+  "author": "Hossein Pourbahrami",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pourbahrmai/rapsa-js/issues"
+  },
+  "homepage": "https://github.com/pourbahrmai/rapsa-js#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "bignumber.js": "^9.1.2"
+  }
+}
