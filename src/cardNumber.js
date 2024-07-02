@@ -1,4 +1,5 @@
 const BaseConverter = require('./baseConverter');
+const banks = require('./banks.json');
 
 class CardNumber {
     constructor(number) {
@@ -29,6 +30,11 @@ class CardNumber {
             s += (d > 9) ? d - 9 : d;
         }
         return ((s % 10) === 0);
+    }
+
+    getBank() {
+        const bankCode = this.decoded.substr(0, 6);
+        return banks.find(b => b.cardCode == bankCode) || null;
     }
 
     toString() {

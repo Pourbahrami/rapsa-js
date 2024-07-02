@@ -1,5 +1,6 @@
 const BigNumber = require('bignumber.js');
 const BaseConverter = require('./baseConverter');
+const banks = require('./banks.json');
 
 class Sheba {
     constructor(number) {
@@ -29,6 +30,11 @@ class Sheba {
         const moved = restDigits + firstTwoDigits;
         const number = new BigNumber(moved);
         return number.mod(97).isEqualTo(1);
+    }
+
+    getBank() {
+        const bankCode = this.decoded.substr(4, 3);
+        return banks.find(b => b.shebaCode == bankCode) || null;
     }
 
     toString() {

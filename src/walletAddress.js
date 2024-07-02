@@ -1,4 +1,5 @@
 const BaseConverter = require('./baseConverter');
+const banks = require('./banks.json');
 
 class WalletAddress {
     constructor(number) {
@@ -38,6 +39,11 @@ class WalletAddress {
         const checksum = (10 - (sum % 10)) % 10;
         
         return checksum === checksumDigit;
+    }
+
+    getBank() {
+        const bankCode = this.decoded.substr(1, 2);
+        return banks.find(b => b.walletCode == bankCode) || null;
     }
 
     toString() {
