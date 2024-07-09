@@ -2,26 +2,31 @@ const BaseConverter = require('./baseConverter');
 const banks = require('./banks.json');
 
 class WalletAddress {
-    constructor(number) {
-        if (/^\d{14}$/.test(number)) {
-            this.decoded = number;
+    constructor(input) {
+        if (/^\d{14}$/.test(input)) {
+            this.address = input;
             this.encoded = this.encode();
         } else {
-            this.encoded = number;
-            this.decoded = this.decode();
+            this.encoded = input;
+            this.address = this.decode();
+        }
+
+        if (!this.isValid()) {
+            throw new Error('Invalid wallet address');
         }
     }
 
     encode() {
-        return BaseConverter.base10ToBase62(this.decoded);
+        return this.encoded ? this.encoded : BaseConverter.base10ToBase62(this.address);
     }
 
     decode() {
-        return BaseConverter.base62ToBase10(this.encoded);
+        return this.address ? this.address : BaseConverter.base62ToBase10(this.encoded);
     }
 
     isValid() {
-        const num = this.decoded;
+        if (!/^[1-4]\d{13}$/.test(this.address)) return false;
+        const num = this.address;
         const checksumDigit = parseInt(num.charAt(num.length - 1), 10);
         const digits = num.substr(0, num.length - 1);
 
@@ -42,12 +47,12 @@ class WalletAddress {
     }
 
     getBank() {
-        const bankCode = this.decoded.substr(1, 2);
+        const bankCode = this.address.substr(1, 2);
         return banks.find(b => b.code == bankCode) || null;
     }
 
     toString() {
-        return this.decoded;
+        return this.address;
     }
 }
 
