@@ -33,8 +33,8 @@ class CardNumber {
     }
 
     getBank() {
-        const bankCode = this.decoded.substr(0, 6);
-        return banks.find(b => b.cardCode == bankCode) || null;
+        const bin = this.decoded.substr(0, 6);
+        return banks.find(b => b.BINs.includes(bin)) || null;
     }
 
     toString() {

@@ -1,198 +1,147 @@
 [
     {
-        "name": "توسعه صادرات ایران",
-        "cardCode": "207177",
-        "shebaCode": "",
-        "walletCode": ""
+        "code": 10,
+        "name": "بانک مرکزی",
+        "BINs": [636795]
     }, {
-        "name": "پاسارگاد",
-        "cardCode": "502229",
-        "shebaCode": "",
-        "walletCode": ""
+        "code": 11,
+        "name": "بانک صنعت و معدن",
+        "BINs": [627961]
     }, {
-        "name": "شهر",
-        "cardCode": "502806",
-        "shebaCode": "",
-        "walletCode": ""
+        "code": 12,
+        "name": "بانک ملت",
+        "BINs": [610433, 991975]
     }, {
-        "name": "توسعه تعاون",
-        "cardCode": "502908",
-        "shebaCode": "",
-        "walletCode": ""
+        "code": 13,
+        "name": "بانک رفاه کارگران",
+        "BINs": [589463]
     }, {
-        "name": "کارآفرین",
-        "cardCode": "502910",
-        "shebaCode": "",
-        "walletCode": ""
+        "code": 14,
+        "name": "بانک مسکن",
+        "BINs": [628023]
     }, {
-        "name": "دی",
-        "cardCode": "502938",
-        "shebaCode": "",
-        "walletCode": ""
+        "code": 15,
+        "name": "بانک سپه",
+        "BINs": [589210]
     }, {
-        "name": "گردشگری",
-        "cardCode": "505416",
-        "shebaCode": "",
-        "walletCode": ""
+        "code": 16,
+        "name": "بانک کشاورزی",
+        "BINs": [603770, 639217]
     }, {
-        "name": "ایران زمین",
-        "cardCode": "505785",
-        "shebaCode": "",
-        "walletCode": ""
+        "code": 17,
+        "name": "بانک ملی ایران",
+        "BINs": [603799]
     }, {
-        "name": "موسسه اعتباری کوثر (سپه)",
-        "cardCode": "505801",
-        "shebaCode": "",
-        "walletCode": ""
+        "code": 18,
+        "name": "بانک تجارت",
+        "BINs": [627353]
     }, {
-        "name": "سپه",
-        "cardCode": "589210",
-        "shebaCode": "",
-        "walletCode": ""
+        "code": 19,
+        "name": "بانک صادرات ایران",
+        "BINs": [603769]
     }, {
-        "name": "رفاه کارگران",
-        "cardCode": "589463",
-        "shebaCode": "",
-        "walletCode": ""
+        "code": 20,
+        "name": "بانک توسعه صادرات ایران",
+        "BINs": [207177, 627648]
     }, {
-        "name": "صادرات ایران",
-        "cardCode": "603769",
-        "shebaCode": "",
-        "walletCode": ""
-    }, {
-        "name": "کشاورزی",
-        "cardCode": "603770",
-        "shebaCode": "",
-        "walletCode": ""
-    }, {
-        "name": "ملی ایران",
-        "cardCode": "603799",
-        "shebaCode": "",
-        "walletCode": ""
-    }, {
-        "name": "قرض الحسنه مهر ایران",
-        "cardCode": "606373",
-        "shebaCode": "",
-        "walletCode": ""
-    }, {
-        "name": "ملت",
-        "cardCode": "610433",
-        "shebaCode": "",
-        "walletCode": ""
-    }, {
-        "name": "سامان",
-        "cardCode": "621986",
-        "shebaCode": "",
-        "walletCode": ""
-    }, {
-        "name": "پارسیان",
-        "cardCode": "622106",
-        "shebaCode": "",
-        "walletCode": ""
-    }, {
-        "name": "تجارت",
-        "cardCode": "627353",
-        "shebaCode": "",
-        "walletCode": ""
-    }, {
-        "name": "انصار (سپه)",
-        "cardCode": "627381",
-        "shebaCode": "",
-        "walletCode": ""
-    }, {
-        "name": "اقتصاد نوین",
-        "cardCode": "627412",
-        "shebaCode": "",
-        "walletCode": ""
-    }, {
-        "name": "کارآفرین",
-        "cardCode": "627488",
-        "shebaCode": "",
-        "walletCode": ""
-    }, {
-        "name": "توسعه صادرات ایران",
-        "cardCode": "627648",
-        "shebaCode": "",
-        "walletCode": ""
-    }, {
+        "code": 21,
         "name": "پست بانک ایران",
-        "cardCode": "627760",
-        "shebaCode": "",
-        "walletCode": ""
+        "BINs": [627760]
     }, {
-        "name": "پارسیان",
-        "cardCode": "627884",
-        "shebaCode": "",
-        "walletCode": ""
+        "code": 22,
+        "name": "بانک توسعه تعاون",
+        "BINs": [502908]
     }, {
-        "name": "صنعت و معدن",
-        "cardCode": "627961",
-        "shebaCode": "",
-        "walletCode": ""
-    }, {
-        "name": "مسکن",
-        "cardCode": "628023",
-        "shebaCode": "",
-        "walletCode": ""
-    }, {
+        "code": 51,
         "name": "موسسه اعتباری توسعه",
-        "cardCode": "628157",
-        "shebaCode": "",
-        "walletCode": ""
+        "BINs": [628157]
     }, {
-        "name": "آینده",
-        "cardCode": "636214",
-        "shebaCode": "",
-        "walletCode": ""
+        "code": 52,
+        "name": "بانک سپه (قوامین)",
+        "BINs": [639599]
     }, {
-        "name": "مرکزی",
-        "cardCode": "636795",
-        "shebaCode": "",
-        "walletCode": ""
+        "code": 53,
+        "name": "بانک کارآفرین",
+        "BINs": [502910, 627488]
     }, {
-        "name": "حکمت ایرانیان (سپه)",
-        "cardCode": "636949",
-        "shebaCode": "",
-        "walletCode": ""
+        "code": 54,
+        "name": "بانک پارسیان",
+        "BINs": [622106, 627884, 639194]
     }, {
-        "name": "پارسیان",
-        "cardCode": "639194",
-        "shebaCode": "",
-        "walletCode": ""
+        "code": 55,
+        "name": "بانک اقتصاد نوین",
+        "BINs": [627412]
     }, {
-        "name": "کشاورزی",
-        "cardCode": "639217",
-        "shebaCode": "",
-        "walletCode": ""
+        "code": 56,
+        "name": "بانک سامان",
+        "BINs": [621986]
     }, {
-        "name": "سینا",
-        "cardCode": "639346",
-        "shebaCode": "",
-        "walletCode": ""
+        "code": 57,
+        "name": "بانک پاسارگاد",
+        "BINs": [502229, 639347]
     }, {
-        "name": "پاسارگاد",
-        "cardCode": "639347",
-        "shebaCode": "",
-        "walletCode": ""
+        "code": 58,
+        "name": "بانک سرمایه",
+        "BINs": [639607]
     }, {
-        "name": "مهر اقتصاد (سپه)",
-        "cardCode": "639370",
-        "shebaCode": "",
-        "walletCode": ""
+        "code": 59,
+        "name": "بانک سینا",
+        "BINs": [639346]
     }, {
-        "name": "قوامین (سپه)",
-        "cardCode": "639599",
-        "shebaCode": "",
-        "walletCode": ""
+        "code": 60,
+        "name": "بانک قرض الحسنه مهر ایران",
+        "BINs": [606373]
     }, {
-        "name": "سرمایه",
-        "cardCode": "639607",
-        "shebaCode": "",
-        "walletCode": ""
+        "code": 61,
+        "name": "بانک شهر",
+        "BINs": [502806, 504706]
     }, {
-        "name": "ملت",
-        "cardCode": "991975",
-        "shebaCode": "",
-        "walletCode": ""
+        "code": 62,
+        "name": "بانک تات",
+        "BINs": [636214]
+    }, {
+        "code": 63,
+        "name": "بانک سپه (انصار)",
+        "BINs": [627381]
+    }, {
+        "code": 64,
+        "name": "بانک گردشگری",
+        "BINs": [505416]
+    }, {
+        "code": 65,
+        "name": "بانک سپه (حکمت ایرانیان)",
+        "BINs": [636949]
+    }, {
+        "code": 66,
+        "name": "بانک دی",
+        "BINs": [502938]
+    }, {
+        "code": 69,
+        "name": "بانک ایران زمین",
+        "BINs": [505785]
+    }, {
+        "code": 70,
+        "name": "بانک قرض‌الحسنه رسالت",
+        "BINs": [504172]
+    }, {
+        "code": 73,
+        "name": "بانک سپه (موسسه اعتباری کوثر)",
+        "BINs": [505801]
+    }, {
+        "code": 75,
+        "name": "موسسه ملل",
+        "BINs": [606256]
+    }, {
+        "code": 79,
+        "name": "بانک سپه (مهر اقتصاد)",
+        "BINs": [639370, 606737]
+    }, {
+        "code": 80,
+        "name": "بانک ملی ایران (نور)",
+        "BINs": [507677]
+    }, {
+        "code": 95,
+        "name": "بانک ایران و ونزوئلا",
+        "BINs": [581874]
     }
 ]

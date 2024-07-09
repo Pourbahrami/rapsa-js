@@ -34,7 +34,7 @@ class Sheba {
 
     getBank() {
         const bankCode = this.decoded.substr(4, 3);
-        return banks.find(b => b.shebaCode == bankCode) || null;
+        return banks.find(b => b.code == bankCode) || null;
     }
 
     toString() {

@@ -43,7 +43,7 @@ class WalletAddress {
 
     getBank() {
         const bankCode = this.decoded.substr(1, 2);
-        return banks.find(b => b.walletCode == bankCode) || null;
+        return banks.find(b => b.code == bankCode) || null;
     }
 
     toString() {
