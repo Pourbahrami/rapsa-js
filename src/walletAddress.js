@@ -1,7 +1,14 @@
 const BaseConverter = require('./baseConverter');
 const banks = require('./banks.json');
 
+/**
+ * Class representing a wallet address.
+ */
 class WalletAddress {
+    /**
+     * Constructs a wallet address instance.
+     * @param {string} input - The wallet address or encoded string.
+     */
     constructor(input) {
         if (/^\d{14}$/.test(input)) {
             this.address = input;
@@ -16,14 +23,26 @@ class WalletAddress {
         }
     }
 
+    /**
+     * Encodes the wallet address to a base 62 string.
+     * @returns {string} The encoded wallet address.
+     */
     encode() {
         return this.encoded ? this.encoded : BaseConverter.base10ToBase62(this.address);
     }
 
+    /**
+     * Decodes the encoded wallet address to its original form.
+     * @returns {string} The decoded wallet address.
+     */
     decode() {
         return this.address ? this.address : BaseConverter.base62ToBase10(this.encoded);
     }
 
+    /**
+     * Validates the wallet address.
+     * @returns {boolean} True if the wallet address is valid, false otherwise.
+     */
     isValid() {
         if (!/^[1-4]\d{13}$/.test(this.address)) return false;
         const num = this.address;
@@ -46,11 +65,19 @@ class WalletAddress {
         return checksum === checksumDigit;
     }
 
+    /**
+     * Retrieves the bank information based on the wallet address.
+     * @returns {Object|null} The bank information or null if not found.
+     */
     getBank() {
         const bankCode = this.address.substr(1, 2);
         return banks.find(b => b.code == bankCode) || null;
     }
 
+    /**
+     * Returns the wallet address as a string.
+     * @returns {string} The wallet address.
+     */
     toString() {
         return this.address;
     }
