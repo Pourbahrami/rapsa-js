@@ -4,7 +4,7 @@ const CardNumber = require('./cardNumber');
 const Sheba = require('./sheba');
 
 const validParams = {
-  'p': ['a', 'i', 'c', 's', 'w', 'u'],
+  'p': ['a', 'b', 'i', 'c', 's', 'w', 'u'],
   't': ['a', 'c', 's', 'w'],
   'b': ['b', 'p'],
   'd': []
@@ -104,6 +104,28 @@ class Rapsa {
   removeAmount() {
     this.validateParam('a');
     delete this.params.a;
+    return this;
+  }
+
+  /**
+   * Adds the Borna transaction ID.
+   * @param {string} bornaTrxId - The Borna transaction ID to add.
+   * @returns {Rapsa} The Rapsa instance.
+   */
+  addBornaTrxId(bornaTrxId) {
+    this.validateParam('b');
+    const encodedBornaTrxId = BaseConverter.base10ToBase62(bornaTrxId);
+    this.params.b = encodedBornaTrxId;
+    return this;
+  }
+
+  /**
+  * Removes the Borna transaction ID.
+  * @returns {Rapsa} The Rapsa instance.
+  */
+  removeBornaTrxId() {
+    this.validateParam('b');
+    delete this.params.b;
     return this;
   }
 
@@ -393,6 +415,14 @@ class Rapsa {
    */
   getAmount() {
     return this.params.a ? BaseConverter.base62ToBase10(this.params.a) : null;
+  }
+
+  /**
+   * Retrieves the Borna transaction ID.
+   * @returns {string|null} The Borna transaction ID or null if not set.
+   */
+  getBornaTrxId() {
+    return this.params.b ? BaseConverter.base62ToBase10(this.params.b) : null;
   }
 
   /**
