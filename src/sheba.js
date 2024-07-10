@@ -13,8 +13,8 @@ class Sheba {
     constructor(input) {
         const upperCase = input.toUpperCase();
         if (!/^IR\d{24}$/.test(upperCase)) {
-            this.sheba = this.decode();
             this.encoded = input;
+            this.sheba = this.decode();
         } else {
             this.sheba = upperCase;
             this.encoded = this.encode();

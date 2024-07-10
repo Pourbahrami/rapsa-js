@@ -11,12 +11,12 @@ class CardNumber {
      * @throws {Error} If the card number is invalid.
      */
     constructor(input) {
-        if (/^[0-9]+$/.test(input)) {
+        if (/^[0-9]{16,}$/.test(input)) {
             this.number = input;
             this.encoded = this.encode();
         } else {
-            this.number = this.decode();
             this.encoded = input;
+            this.number = this.decode();
         }
 
         if (!this.isValid()) {
