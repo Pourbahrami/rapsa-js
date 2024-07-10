@@ -98,6 +98,16 @@ class Rapsa {
   }
 
   /**
+   * Removes the amount.
+   * @returns {Rapsa} The Rapsa instance.
+   */
+  removeAmount() {
+    this.validateParam('a');
+    delete this.params.a;
+    return this;
+  }
+
+  /**
    * Adds the invoice ID parameter.
    * @param {number} invoiceId - The invoice ID to add.
    * @returns {Rapsa} The current Rapsa instance.
@@ -106,6 +116,16 @@ class Rapsa {
     this.validateParam('i');
     const encodedInvoiceId = BaseConverter.base10ToBase62(invoiceId);
     this.params.i = encodedInvoiceId;
+    return this;
+  }
+
+  /**
+   * Removes the invoice ID.
+   * @returns {Rapsa} The Rapsa instance.
+   */
+  removeInvoiceId() {
+    this.validateParam('i');
+    delete this.params.i;
     return this;
   }
 
@@ -127,6 +147,30 @@ class Rapsa {
   }
 
   /**
+   * Removes a specific card number.
+   * @param {string} number - The card number to remove.
+   * @returns {Rapsa} The Rapsa instance.
+   */
+  removeCard(number) {
+    this.validateParam('c');
+    if (this.params.c) {
+      const card = new CardNumber(number);
+      this.params.c = this.params.c.filter(c => c !== card.encoded);
+    }
+    return this;
+  }
+
+  /**
+  * Removes all card numbers.
+  * @returns {Rapsa} The Rapsa instance.
+  */
+  removeCards() {
+    this.validateParam('c');
+    this.params.c = [];
+    return this;
+  }
+
+  /**
    * Adds the Sheba number parameter.
    * @param {string} number - The Sheba number to add.
    * @returns {Rapsa} The current Rapsa instance.
@@ -134,12 +178,36 @@ class Rapsa {
   addSheba(number) {
     this.validateParam('s');
     const sheba = new Sheba(number);
-    
+
     if (!this.params.s) {
       this.params.s = [];
     }
     this.params.s.push(sheba.encoded);
 
+    return this;
+  }
+
+  /**
+  * Removes a specific Sheba number.
+  * @param {string} number - The Sheba number to remove.
+  * @returns {Rapsa} The Rapsa instance.
+  */
+  removeSheba(number) {
+    this.validateParam('s');
+    if (this.params.s) {
+      const sheba = new Sheba(number);
+      this.params.s = this.params.s.filter(s => s !== sheba.encoded);
+    }
+    return this;
+  }
+
+  /**
+  * Removes all Sheba numbers.
+  * @returns {Rapsa} The Rapsa instance.
+  */
+  removeShebas() {
+    this.validateParam('s');
+    this.params.s = [];
     return this;
   }
 
@@ -168,6 +236,30 @@ class Rapsa {
   }
 
   /**
+  * Removes a specific wallet address.
+  * @param {string} address - The wallet address to remove.
+  * @returns {Rapsa} The Rapsa instance.
+  */
+  removeWallet(address) {
+    this.validateParam('w');
+    if (this.params.w) {
+      const wallet = new WalletAddress(address);
+      this.params.w = this.params.w.filter(w => w !== wallet.encoded);
+    }
+    return this;
+  }
+
+  /**
+  * Removes all wallet addresses.
+  * @returns {Rapsa} The Rapsa instance.
+  */
+  removeWallets() {
+    this.validateParam('w');
+    this.params.w = [];
+    return this;
+  }
+
+  /**
    * Adds the unit parameter.
    * @param {number} unit - The unit to add (must be between 1 and 5).
    * @returns {Rapsa} The current Rapsa instance.
@@ -179,6 +271,16 @@ class Rapsa {
       throw new Error('Unit must be a number between 1 and 5');
     }
     this.params.u = unit;
+    return this;
+  }
+
+  /**
+   * Removes the unit.
+   * @returns {Rapsa} The Rapsa instance.
+   */
+  removeUnit() {
+    this.validateParam('u');
+    delete this.params.u;
     return this;
   }
 
@@ -195,6 +297,16 @@ class Rapsa {
   }
 
   /**
+   * Removes the bill ID.
+   * @returns {Rapsa} The Rapsa instance.
+   */
+  removeBillId() {
+    this.validateParam('b');
+    delete this.params.b;
+    return this;
+  }
+
+  /**
    * Adds the payment ID parameter.
    * @param {number} paymentId - The payment ID to add.
    * @returns {Rapsa} The current Rapsa instance.
@@ -203,6 +315,16 @@ class Rapsa {
     this.validateParam('p');
     const encodedPaymentId = BaseConverter.base10ToBase62(paymentId);
     this.params.p = encodedPaymentId;
+    return this;
+  }
+
+  /**
+   * Removes the payment ID.
+   * @returns {Rapsa} The Rapsa instance.
+   */
+  removePaymentId() {
+    this.validateParam('p');
+    delete this.params.p;
     return this;
   }
 
