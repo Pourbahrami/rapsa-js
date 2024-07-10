@@ -6,9 +6,10 @@ describe('WalletAddress', () => {
     expect(validWalletAddress.isValid()).toBe(true);
   });
 
-  test('Invalid WalletAddress should return false for isValid()', () => {
-    const invalidWalletAddress = new WalletAddress('12345678901234');
-    expect(invalidWalletAddress.isValid()).toBe(false);
+  test('Invalid WalletAddress should throw Error', () => {
+    expect(() => {
+      new WalletAddress('12345678901234');
+    }).toThrow('Invalid wallet address');
   });
 
   test('Encoded and decoded values should match', () => {

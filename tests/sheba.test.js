@@ -6,9 +6,10 @@ describe('Sheba', () => {
     expect(validSheba.isValid()).toBe(true);
   });
 
-  test('Invalid Sheba should return false for isValid()', () => {
-    const invalidSheba = new Sheba('IR123456789012345678901234');
-    expect(invalidSheba.isValid()).toBe(false);
+  test('Invalid Sheba should throw Error', () => {
+    expect(() => {
+      new Sheba('IR123456789012345678901234');
+    }).toThrow('Invalid Sheba number');
   });
 
   test('Encoded and decoded values should match', () => {
