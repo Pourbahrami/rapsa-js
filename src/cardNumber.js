@@ -46,7 +46,7 @@ class CardNumber {
      */
     isValid() {
         const L = this.number.length;
-        if (L < 16 || parseInt(this.number.substr(1, 10), 10) === 0 || parseInt(this.number.substr(10, 6), 10) === 0) return false;
+        if (L !== 16 || parseInt(this.number.substr(1, 10), 10) === 0 || parseInt(this.number.substr(10, 6), 10) === 0) return false;
         let s = 0;
         for (let i = 0; i < 16; i++) {
             const k = (i % 2 === 0) ? 2 : 1;
