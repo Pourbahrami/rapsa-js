@@ -161,9 +161,10 @@ class Rapsa {
     const card = new CardNumber(number);
 
     if (!this.params.c) {
-      this.params.c = [];
+      this.params.c = [card.encoded];
+    } else if (!this.params.c.includes(card.encoded)) {
+      this.params.c.push(card.encoded);
     }
-    this.params.c.push(card.encoded);
 
     return this;
   }
@@ -202,9 +203,10 @@ class Rapsa {
     const sheba = new Sheba(number);
 
     if (!this.params.s) {
-      this.params.s = [];
+      this.params.s = [sheba.encoded];
+    } else if (!this.params.s.includes(sheba.encoded)) {
+      this.params.s.push(sheba.encoded);
     }
-    this.params.s.push(sheba.encoded);
 
     return this;
   }
@@ -250,9 +252,10 @@ class Rapsa {
     const wallet = new WalletAddress(address);
 
     if (!this.params.w) {
-      this.params.w = [];
+      this.params.w = [wallet.encoded];
+    } else if (!this.params.w.includes(wallet.encoded)) {
+      this.params.w.push(wallet.encoded);
     }
-    this.params.w.push(wallet.encoded);
 
     return this;
   }
