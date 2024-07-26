@@ -1,6 +1,6 @@
 {
   "name": "rapsa",
-  "version": "1.2.02",
+  "version": "1.2.3",
   "description": "Rapsa SDK for JavaScript",
   "main": "index.js",
   "scripts": {
