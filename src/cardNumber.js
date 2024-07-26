@@ -58,11 +58,11 @@ class CardNumber {
 
     /**
      * Retrieves the bank associated with the card number.
-     * @returns {Object|null} The bank object if found, null otherwise.
+     * @returns {Object} The bank information or a default object if not found.
      */
     getBank() {
-        const bin = this.number.substr(0, 6);
-        return banks.find(b => b.BINs.includes(bin)) || null;
+        const bin = this.number.slice(0, 6);
+        return banks.find(b => b.BINs.includes(Number(bin))) || { code: 0, name: 'unknown' };
     }
 
     /**

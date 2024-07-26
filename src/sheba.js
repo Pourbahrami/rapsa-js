@@ -61,11 +61,11 @@ class Sheba {
 
     /**
      * Retrieves the bank information based on the Sheba number.
-     * @returns {Object|null} The bank information or null if not found.
+     * @returns {Object} The bank information or a default object if not found.
      */
     getBank() {
-        const bankCode = this.sheba.substr(4, 3);
-        return banks.find(b => b.code == bankCode) || null;
+        const bankCode = this.sheba.slice(4, 3);
+        return banks.find(b => b.code == Number(bankCode)) || { code: 0, name: 'unknown' };
     }
 
     /**

@@ -61,17 +61,17 @@ class WalletAddress {
             shouldDouble = !shouldDouble;
         }
         const checksum = (10 - (sum % 10)) % 10;
-        
+
         return checksum === checksumDigit;
     }
 
     /**
      * Retrieves the bank information based on the wallet address.
-     * @returns {Object|null} The bank information or null if not found.
+     * @returns {Object} The bank information or a default object if not found.
      */
     getBank() {
-        const bankCode = this.address.substr(1, 2);
-        return banks.find(b => b.code == bankCode) || null;
+        const bankCode = this.address.slice(1, 2);
+        return banks.find(b => b.code == Number(bankCode)) || { code: 0, name: 'unknown' };
     }
 
     /**
