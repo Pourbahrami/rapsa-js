@@ -31,7 +31,7 @@ class Sheba {
      */
     encode() {
         if (this.encoded) return this.encoded;
-        const trimmed = this.number.substr(2);
+        const trimmed = this.number.slice(2);
         return BaseConverter.base10ToBase62(trimmed);
     }
 
@@ -51,9 +51,9 @@ class Sheba {
      */
     isValid() {
         if (!/^IR\d{24}$/.test(this.number)) return false;
-        const transformed = this.number.substr(2) + '1827';
-        const firstTwoDigits = transformed.substr(0, 2);
-        const restDigits = transformed.substr(2);
+        const transformed = this.number.slice(2) + '1827';
+        const firstTwoDigits = transformed.slice(0, 2);
+        const restDigits = transformed.slice(2);
         const moved = restDigits + firstTwoDigits;
         const number = new BigNumber(moved);
         return number.mod(97).isEqualTo(1);
@@ -64,8 +64,8 @@ class Sheba {
      * @returns {Object} The bank information or a default object if not found.
      */
     getBank() {
-        const bankCode = this.number.slice(4, 3);
-        return banks.find(b => b.code == Number(bankCode)) || { code: 0, name: 'unknown' };
+        const bankCode = Number(this.number.slice(4, 7));
+        return banks.find(b => b.code == bankCode) || { code: 0, name: 'unknown' };
     }
 
     /**

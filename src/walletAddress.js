@@ -70,7 +70,7 @@ class WalletAddress {
      * @returns {Object} The bank information or a default object if not found.
      */
     getBank() {
-        const bankCode = this.address.slice(1, 2);
+        const bankCode = this.address.slice(1, 3);
         return banks.find(b => b.code == Number(bankCode)) || { code: 0, name: 'unknown' };
     }
 

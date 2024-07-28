@@ -46,11 +46,11 @@ class CardNumber {
      */
     isValid() {
         const L = this.number.length;
-        if (L !== 16 || parseInt(this.number.substr(1, 10), 10) === 0 || parseInt(this.number.substr(10, 6), 10) === 0) return false;
+        if (L !== 16 || Number(this.number.slice(0, 9)) === 0 || Number(this.number.slice(9, 15)) === 0) return false;
         let s = 0;
         for (let i = 0; i < 16; i++) {
             const k = (i % 2 === 0) ? 2 : 1;
-            const d = parseInt(this.number.substr(i, 1), 10) * k;
+            const d = Number(this.number[i]) * k;
             s += (d > 9) ? d - 9 : d;
         }
         return ((s % 10) === 0);
@@ -61,8 +61,8 @@ class CardNumber {
      * @returns {Object} The bank information or a default object if not found.
      */
     getBank() {
-        const bin = this.number.slice(0, 6);
-        return banks.find(b => b.BINs.includes(Number(bin))) || { code: 0, name: 'unknown' };
+        const bin = Number(this.number.slice(0, 6));
+        return banks.find(b => b.BINs.includes((bin))) || { code: 0, name: 'unknown' };
     }
 
     /**
