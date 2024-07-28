@@ -14,9 +14,9 @@ class Sheba {
         const upperCase = input.toUpperCase();
         if (!/^IR\d{24}$/.test(upperCase)) {
             this.encoded = input;
-            this.sheba = this.decode();
+            this.number = this.decode();
         } else {
-            this.sheba = upperCase;
+            this.number = upperCase;
             this.encoded = this.encode();
         }
 
@@ -31,7 +31,7 @@ class Sheba {
      */
     encode() {
         if (this.encoded) return this.encoded;
-        const trimmed = this.sheba.substr(2);
+        const trimmed = this.number.substr(2);
         return BaseConverter.base10ToBase62(trimmed);
     }
 
@@ -40,7 +40,7 @@ class Sheba {
      * @returns {string} The decoded Sheba number.
      */
     decode() {
-        if (this.sheba) return this.sheba;
+        if (this.number) return this.number;
         const decodedBase10 = BaseConverter.base62ToBase10(this.encoded);
         return `IR${decodedBase10}`;
     }
@@ -50,8 +50,8 @@ class Sheba {
      * @returns {boolean} True if the Sheba number is valid, false otherwise.
      */
     isValid() {
-        if (!/^IR\d{24}$/.test(this.sheba)) return false;
-        const transformed = this.sheba.substr(2) + '1827';
+        if (!/^IR\d{24}$/.test(this.number)) return false;
+        const transformed = this.number.substr(2) + '1827';
         const firstTwoDigits = transformed.substr(0, 2);
         const restDigits = transformed.substr(2);
         const moved = restDigits + firstTwoDigits;
@@ -64,7 +64,7 @@ class Sheba {
      * @returns {Object} The bank information or a default object if not found.
      */
     getBank() {
-        const bankCode = this.sheba.slice(4, 3);
+        const bankCode = this.number.slice(4, 3);
         return banks.find(b => b.code == Number(bankCode)) || { code: 0, name: 'unknown' };
     }
 
@@ -73,7 +73,7 @@ class Sheba {
      * @returns {string} The Sheba number.
      */
     toString() {
-        return this.sheba;
+        return this.number;
     }
 }
 
