@@ -42,7 +42,8 @@ class Sheba {
     decode() {
         if (this.number) return this.number;
         const decodedBase10 = BaseConverter.base62ToBase10(this.encoded);
-        return `IR${decodedBase10}`;
+        const paddedNumber = decodedBase10.padStart(24, '0');
+        return `IR${paddedNumber}`;
     }
 
     /**
