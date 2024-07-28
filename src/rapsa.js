@@ -438,26 +438,26 @@ class Rapsa {
 
   /**
    * Retrieves the card numbers parameter.
-   * @returns {CardNumber[]|null} The card numbers or null if not set.
+   * @returns {CardNumber[]} The card numbers.
    */
   getCards() {
-    return this.params.c ? this.params.c.map(encoded => new CardNumber(encoded)) : null;
+    return this.params.c ? this.params.c.map(encoded => new CardNumber(encoded)) : [];
   }
 
   /**
    * Retrieves the Sheba numbers parameter.
-   * @returns {Sheba[]|null} The Sheba numbers or null if not set.
+   * @returns {Sheba[]} The Sheba numbers.
    */
   getShebas() {
-    return this.params.s ? this.params.s.map(encoded => new Sheba(encoded)) : null;
+    return this.params.s ? this.params.s.map(encoded => new Sheba(encoded)) : [];
   }
 
   /**
    * Retrieves the wallet addresses parameter.
-   * @returns {WalletAddress[]|null} The wallet addresses or null if not set.
+   * @returns {WalletAddress[]} The wallet addresses.
    */
   getWallets() {
-    return this.params.w ? this.params.w.map(encoded => new WalletAddress(encoded)) : null;
+    return this.params.w ? this.params.w.map(encoded => new WalletAddress(encoded)) : [];
   }
 
   /**
