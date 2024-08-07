@@ -394,7 +394,7 @@ class Rapsa {
     const rapsa = new Rapsa().setPath(path);
 
     for (const key in params) {
-      if (['c', 's', 'w'].includes(params[key])) {
+      if (['c', 's', 'w'].includes(key)) {
         continue;
       }
       params[key] = params[key][0];
